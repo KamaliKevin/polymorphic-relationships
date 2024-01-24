@@ -1,0 +1,25 @@
+models:
+  Post:
+    name: string:100
+    relationships:
+      morphMany: Comment
+
+  Video:
+    url: string:300
+    relationships:
+      morphMany: Comment
+
+  Comment:
+    content: string:500
+    relationships:
+      morphTo: Commentable
+
+controllers:
+  Post:
+    resource
+  Video:
+    resource
+  Comment:
+    resource
+
+seeders: Post, Video
